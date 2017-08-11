@@ -1,8 +1,13 @@
 package mx.mobile4.cliente;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+import mx.mobile4.cliente.Libs.Network;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,6 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this.getApplicationContext(), "Mobile4 Innovando", Toast.LENGTH_SHORT).show();
+        if(Network.isNetworkAvailable(this.getApplicationContext())){
+            Intent intent = new Intent(this, RegistroActivity.class);
+            startActivity(intent);
+
+        }else{
+            Toast.makeText(this.getApplicationContext(), R.string.aviso_red_no_disponible, Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

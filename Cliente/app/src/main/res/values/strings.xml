@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mobile4 v 1.0</string>
+    <string name="app_name">Mobile4</string>
     <string name="aviso_red_disponible">Red Disponible</string>
     <string name="aviso_red_no_disponible">Red No Disponible</string>
     <string name="titulo_activacion">Proceso Activación</string>
